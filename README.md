@@ -22,3 +22,5 @@ Available Case Studies in this first release:
 |**LFCS-2**|[Insecure Identity Validation Workflow](https://github.com/s4dhulabs/LFWFBD/blob/main/Cases/LFCS-2.md) |2|In progress :factory_worker:
 
 <br>
+
+_Soon we'll have a guide on how this project can be used from different perspectives and goals._
