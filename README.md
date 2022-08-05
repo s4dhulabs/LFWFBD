@@ -1,5 +1,5 @@
 # LFWF:BD - Logic Flaws Works Fine by Design
-**A collection of AppSec case studies on business logic flaws and insecure design scenarios.**
+A collection of AppSec case studies on business logic flaws and insecure design scenarios.
 
 ![image](https://user-images.githubusercontent.com/89562876/183073831-20a71b0e-4f88-4510-80bc-3c1396ef66d8.png)
 
