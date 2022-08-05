@@ -12,14 +12,13 @@ Equally crucial to heads up that this project is a product of brainstorming and 
 
 Instead, this is about ideas I've been brainstorming for a long time during my journey in information security. That said, this insight may also help you somehow, whether you're developing or testing application controls. 
 
-<br/>
 
 
-<br/>
+Available Case Studies in this first release:
 
-| **ID** | **Case study**  |  **Cases**  |
-| :-----: | :-----: | :-----: | 
-|**LFCS-1**|[Legitimate User Punished by Security Mechanism](https://github.com/s4dhulabs/LFWFBD/blob/main/TVPS/LFSC-1.md)|1
-|**LFCS-2**|[Insecure Identity Validation Workflow](https://github.com/s4dhulabs/LFWFBD/blob/main/TVPS/LFSC-1.md) |2
+| **ID** | **Case study**  |  **Cases**  | **Status**  |
+| :-----: | :-----: | :-----: | :-----: | 
+|**LFCS-1**|[Legitimate User Punished by Security Mechanism](https://github.com/s4dhulabs/LFWFBD/blob/main/TVPS/LFSC-1.md)|1|Available
+|**LFCS-2**|[Insecure Identity Validation Workflow](https://github.com/s4dhulabs/LFWFBD/blob/main/TVPS/LFSC-1.md) |2|In progress
 
 <br>
