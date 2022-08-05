@@ -92,7 +92,7 @@ As we can see, the case studied here is so problematic and with such a wild spre
 
 <br>
 
-_Continue..._
+The situation here is that if we put the first statement into practice, the researcher's advice, we will inevitably put legitimate users at risk of being punished when threat actors try to brute force their credentials. Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
 
 <br/>
 
