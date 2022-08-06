@@ -36,6 +36,8 @@ flowchart LR
     end
 ```
 
+<br>
+
 _LFCS 1.1 scenario matrix references_
 | **ASVS** | **CWE**  | **OWASP Top 10**  | **ATT&CK**  | **WSTG** | **OAT** | **Techniques** | **Components** | **Properties** |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
