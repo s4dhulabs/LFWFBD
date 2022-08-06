@@ -11,7 +11,7 @@ flowchart LR
 <br/>
 
 # Table of contents
-1. [Insecure Lockout Controls: Authentication](#item1)
+1. [Insecure Reactive Controls: Authentication](#item1)
     * [Flow Analysis](#subitem1)
     * [Premisse](#subitem2)
     * [User perspective](#subitem3)
@@ -21,7 +21,7 @@ flowchart LR
 4. [Conclusion](#item4) 
 <br/>
 
-## 1.1: Insecure Lockout Controls: Authentication<a name="item1"></a>
+## 1.1: Insecure Reactive Controls: Authentication<a name="item1"></a>
 
 Lockout controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
