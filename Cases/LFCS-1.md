@@ -41,9 +41,9 @@ flowchart LR
     %%b1-->b2
     %%end
     subgraph <b>LFCS-1</b>
-    NRA-Control-.->Lockout
-    NRA-Control-.->Disconnection
-    NRA-Control-.->Delay
+    Control-.->Lockout
+    Control-.->Disconnection
+    Control-.->Delay
     end
 ```
 
