@@ -42,8 +42,10 @@ graph LR
 
 ### Premisse
 This is a negative approach that starts from a legitimate premisse: If someone is trying to guess authentic users credentials many times he will be blocked. 
+
 ### User perspective
-This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if didn't do anything wrong, so at least thecnicaly it put the companies business at suspect, because seems like they don't know what they doing. They dont have control about users activities. 
+This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, so at least thecnicaly it put the companies business at suspect, because seems like they don't know what they doing. They dont have control about users activities. 
+
 ### Outcome
 In this scenario just the legitimate user has been punished while the attacker just received another insight about how to disrupt that particular business workflow by abusing of the insecure design. 
 
@@ -63,7 +65,7 @@ graph LR
    
 
 ```
-In addition the attacker also know which users are valid or not, because of course, those blocked are valid. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess passaword, but also the usernames from a blackbox perspective.
+In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
 
 ### Complexities e Misconceptions
 _[Section in progress]_
