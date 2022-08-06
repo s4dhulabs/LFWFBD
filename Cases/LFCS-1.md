@@ -10,7 +10,18 @@ flowchart LR
 <br/>
 <br/>
 
-## 1.1: Insecure Lockout Controls: Authentication
+# Table of contents
+1. [Insecure Lockout Controls: Authentication](#item1)
+    * [Flow Analysis](#subitem1)
+    * [Premisse](#subitem2)
+    * [User perspective](#subitem3)
+    * [Outcome](#subitem4)
+2. [Complexities and Misconceptions](#item2) 
+3. [Mitigation Insights](#item3) 
+4. [Conclusion](#item4) 
+<br/>
+
+## 1.1: Insecure Lockout Controls: Authentication<a name="item1"></a>
 
 Lockout controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
@@ -47,7 +58,7 @@ _This matrix is meant to be used as a general reference to identify, test, and m
 <br/>
 <br/>
 
-### LFCS-1.1 Flow Analysis
+### LFCS-1.1 Flow Analysis<a name="subitem1"></a>
 This scenario is maybe the most common one where we're talking about Basic Authentication. In this case the flaw arises from an effort to stop the attacker's activities via application controls. Usually is based on the idea of the maximum number of attempts allowed. After which, the user will be blocked for some time. 
 
 <br/>
@@ -61,13 +72,13 @@ graph LR
 
 ```
 
-### Premisse
+### Premisse<a name="subitem2"></a>
 This is a negative approach that starts from a legitimate premisse: If someone is trying to guess authentic users credentials many times he will be blocked. 
 
-### User perspective
+### User perspective<a name="subitem3"></a>
 This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, so at least thecnicaly it put the companies business at suspect, because seems like they don't know what they doing. They dont have control about users activities. 
 
-### Outcome
+### Outcome<a name="subitem4"></a>
 In this scenario just the legitimate user has been punished while the attacker just received another insight about how to disrupt that particular business workflow by abusing of the insecure design. 
 
 And other important point about this really ordinary problem can be seem bellow:
@@ -88,7 +99,7 @@ graph LR
 ```
 In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
 
-### Complexities and Misconceptions
+### Complexities and Misconceptions<a name="item2"></a>
 _[Section in progress]_
 
 Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. Let's take, for example these two CVE IDs below: 
@@ -121,7 +132,7 @@ The situation here is that if we put the first statement into practice we will i
 
 <br/>
 
-### Mitigation Insights 
+### Mitigation Insights<a name="item3"></a> 
 _[Section in progress]_
 
 The below acronyms refer to approaches and controls related to LFCS 1.1.
@@ -221,7 +232,7 @@ Review the reference items on the scenario matrix table in the begin, that inclu
 
 _Continue..._
 
-### Conclusion:
+### Conclusion:<a name="item4"></a> 
 
 Besides the fact that this approach is not effective, it also create new problems such as:
 
