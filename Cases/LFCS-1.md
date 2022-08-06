@@ -17,6 +17,25 @@ How it's based on a negative approach (stop/deny/restrict/ban something or someo
 
 <br/>
 
+In general lines, the relationships between the control and its actions in the LFCS-1 perspective can be seen below: 
+
+```mermaid
+flowchart LR
+    subgraph <b>Reactive Actions</b>
+    Lockout
+    Disconnection
+    Delay
+    end
+    %%subgraph two
+    %%b1-->b2
+    %%end
+    subgraph <b>LFCS-1</b>
+    NRA-Control-.->Lockout
+    NRA-Control-.->Disconnection
+    NRA-Control-.->Delay
+    end
+```
+
 _LFCS 1.1 scenario matrix references_
 | **ASVS** | **CWE**  | **OWASP Top 10**  | **ATT&CK**  | **WSTG** | **OAT** | **Techniques** | **Components** | **Properties** |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
