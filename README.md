@@ -24,7 +24,7 @@ Available Case Studies in this first release:
 <br>
 
 ### What about this name?
-This synthesizes the own nature and motivation for this project. It's a kind reminder that logic flaws and insecure design issues could affect your business, clients, and the whole user experience. Still, in theory, everything will be fine, according to the plan, no [detectable] vulnerabilities. 
+This synthesizes the own nature and motivation for this project. It's a kind reminder that logic flaws and insecure design issues could affect your business, clients, and the whole user experience. Still, in theory, everything will be just fine, according to the plan, no [detectable] vulnerabilities to be worried about. 
 
 <br>
 
