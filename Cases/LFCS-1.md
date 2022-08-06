@@ -26,8 +26,6 @@ flowchart LR
 Lockout controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
 
-<br/>
-
 In general lines, the relationships between the control and its actions in the LFCS-1 perspective can be seen below: 
 
 ```mermaid
