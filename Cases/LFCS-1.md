@@ -111,7 +111,7 @@ Although it is relatively easy to find real word vulnerabilities in this studied
 
 <br/>
 
-In the first one CVE-1999-**1152** the Analysis Description section says: 
+🔖 In the first one CVE-1999-**1152** the Analysis Description section says: 
 
 ```
 Compaq/Microcom 6000 Access Integrator does not disconnect a client after a certain number of failed login attempts, 
@@ -124,7 +124,6 @@ As we can see, the case studied here is so problematic and with such a wild spre
 
 2.       [Statement 1] allows remote attackers to guess usernames or passwords via a brute force attack
 
-<br>
 
 The situation here is that if we put the first statement into practice we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
 
@@ -145,7 +144,14 @@ In this way, we'll have something like this:
 Important to note that our point here is to discuss those less evident side-effects of taking such negative/reactive actions because, of course, in the pseudo-code above, the line 2 is going to mitigate the attack but also prejudice the user, even if the attack was not succeeded. 
 
 And if you don't do that, so you'll hit line 4, and the attack will continue, and with so, you'll be at risk of having your application, user identity, and client database compromised. 
+<br/><br/>
 
+🔖 In the second vulnerability CVE-1999-**1324** we have:
+```
+VAXstations running Open VMS 5.3 through 5.5-2 with VMS DECwindows or MOTIF do not properly 
+disable access to user accounts that exceed the break-in limit threshold for failed login attempts, 
+which makes it easier for attackers to conduct brute force password guessing.
+```
 
 <br/>
 
