@@ -126,7 +126,21 @@ As we can see, the case studied here is so problematic and with such a wild spre
 
 <br>
 
-The situation here is that if we put the first statement into practice we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
+The situation here is that if we put the first statement into practice we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
+
+Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
+
+In this way, we'll have something like this:
+
+```python
+1   if apply(sttmt1):
+2       do(NRA-) 
+3   if not_apply(sttm1):
+4       happens(sttm2)
+5   else:
+6       design_do(PPA+)
+    
+```
 
 
 
