@@ -67,7 +67,7 @@ graph LR
 ```
 In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
 
-### Complexities e Misconceptions
+### Complexities and Misconceptions
 _[Section in progress]_
 
 Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. Let's take, for example these two CVE IDs below: 
@@ -94,7 +94,9 @@ As we can see, the case studied here is so problematic and with such a wild spre
 
 <br>
 
-The situation here is that if we put the first statement into practice, the researcher's advice, we will inevitably put legitimate users at risk of being punished when threat actors try to brute force their credentials. Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
+The situation here is that if we put the first statement into practice, the researcher's advice, we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
+
+
 
 <br/>
 
@@ -105,9 +107,9 @@ The below acronyms refer to approaches and controls related to LFCS 1.1.
 
 |Term| Literal | Value|
 --- | --- | ---|
-|NPA|Negative Punitive Approach|-|
-|PPA|Positive Proactive Approach|-|
-|EPC|Exponential Puzzle Control|+|
+|NPA|Negative Punitive Approach|**-**|
+|PPA|Positive Proactive Approach|**+**|
+|EPC|Exponential Puzzle Control|**+**|
 
 
 ```mermaid
