@@ -107,7 +107,7 @@ The below acronyms refer to approaches and controls related to LFCS 1.1.
 
 |Term| Literal | Value|
 --- | --- | ---|
-|NPA|Negative Punitive Approach|**-**|
+|NRA|Negative Reactive Approach|**-**|
 |PPA|Positive Proactive Approach|**+**|
 |EPC|Exponential Puzzle Control|**+**|
 
@@ -126,7 +126,7 @@ graph TB
     contexts[[ - Behaviour <br> - Events <br> - Context <br> - Accountability]]
     
     %% requirements
-    req1((Incremental <br> Requirement))
+    req1((<b>EPC+</b><br>Incremental <br> Requirement))
     req2((Contextual <br> action))
     req3((Other again))
     
@@ -134,7 +134,7 @@ graph TB
     na2>Disconnection]
     na3>Lockout]
     
-    e[<b>NPA - </b>]
+    e[<b>NRA - </b>]
     f((<b>PPA + </b>))
     
     e --- triggers
