@@ -17,7 +17,7 @@ This synthesizes the own nature and motivation for this project. It's a kind rem
 
 <br>
 
-Available Case Studies in this first release:
+Available case studies in this first release:
 
 | **ID** | **Case study**  |  **Cases**  | **Status**  |
 | :-----: | :-----: | :-----: | :-----: | 
