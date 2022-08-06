@@ -147,7 +147,7 @@ Important to note that our point here is to discuss those less evident side-effe
 And if you don't do that, so you'll hit line 4, and the attack will continue, and with so, you'll be at risk of having your application, user identity, and client database compromised. 
 <br/><br/>
 
-🔖 In the second vulnerability CVE-1999-**1324** we have:
+🔖 In the second vulnerability CVE-1999-**1324** we have the following Analysis Description:
 ```
 VAXstations running Open VMS 5.3 through 5.5-2 with VMS DECwindows or
 MOTIF do not properly disable access to user accounts that exceed the
