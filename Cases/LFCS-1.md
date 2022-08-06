@@ -33,6 +33,7 @@ flowchart LR
     subgraph <b>Reactive Actions</b>
     Lockout
     Disconnection
+    Deactivation 
     Delay
     end
     %%subgraph two
@@ -42,6 +43,7 @@ flowchart LR
     Control-.->Lockout
     Control-.->Disconnection
     Control-.->Delay
+    Control-.->Deactivation
     end
 ```
 
@@ -119,9 +121,9 @@ attackers to guess usernames or passwords via a brute force attack.
 
 As we can see, the case studied here is so problematic and with such a wild spread misconception about how to handle it that the potential solution also creates new ubiquitous issues. In this way, we have two interesting statements here:
 
-1.       [The affected technology] does not disconnect a client after a certain number of failed login attempts
+    1. [The affected technology] does not disconnect a client after a certain number of failed login attempts
 
-2.       [Statement 1] allows remote attackers to guess usernames or passwords via a brute force attack
+    2. [Statement 1] allows remote attackers to guess usernames or passwords via a brute force attack
 
 
 The situation here is that if we put the first statement into practice we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
@@ -152,6 +154,14 @@ MOTIF do not properly disable access to user accounts that exceed the
 break-in limit threshold for failed login attempts, which makes it easier
 for attackers to conduct brute force password guessing.
 ```
+
+And splitting it again into two statements (1. what the technology is missing, and 2. what this can allow threat actors to with), we'll ending up in the same arrangement we saw previously: 
+
+
+    1. [The affected technology] do not properly disable access to user accounts that exceed the
+       break-in limit threshold for failed login attempts
+
+    2. [Statement 1] makes it easier for attackers to conduct brute force password guessing.
 
 <br/>
 
