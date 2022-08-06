@@ -10,7 +10,7 @@ flowchart LR
 <br/>
 <br/>
 
-# Table of contents
+### Table of contents
 1. [Insecure Reactive Controls: Authentication](#item1)
     * [Flow Analysis](#subitem1)
     * [Premisse](#subitem2)
@@ -58,7 +58,7 @@ _This matrix is meant to be used as a general reference to identify, test, and m
 <br/>
 <br/>
 
-### LFCS-1.1 Flow Analysis<a name="subitem1"></a>
+#### LFCS-1.1 Flow Analysis<a name="subitem1"></a>
 This scenario is maybe the most common one where we're talking about Basic Authentication. In this case the flaw arises from an effort to stop the attacker's activities via application controls. Usually is based on the idea of the maximum number of attempts allowed. After which, the user will be blocked for some time. 
 
 <br/>
@@ -72,13 +72,13 @@ graph LR
 
 ```
 
-### Premisse<a name="subitem2"></a>
+#### Premisse<a name="subitem2"></a>
 This is a negative approach that starts from a legitimate premisse: If someone is trying to guess authentic users credentials many times he will be blocked. 
 
-### User perspective<a name="subitem3"></a>
+#### User perspective<a name="subitem3"></a>
 This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, so at least thecnicaly it put the companies business at suspect, because seems like they don't know what they doing. They dont have control about users activities. 
 
-### Outcome<a name="subitem4"></a>
+#### Outcome<a name="subitem4"></a>
 In this scenario just the legitimate user has been punished while the attacker just received another insight about how to disrupt that particular business workflow by abusing of the insecure design. 
 
 And other important point about this really ordinary problem can be seem bellow:
