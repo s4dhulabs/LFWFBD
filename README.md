@@ -5,14 +5,14 @@ A collection of AppSec case studies on business logic flaws and insecure design 
 
 
 
-### About this Project 
+### Overview
 The first thing to be aware of here is: It is meant to be precisely what the name indicates: **Case studies** into how to look at the issues and possibly handle them in a less harmful fashion (and more creative one).
 
 Equally crucial to heads up that this project is a product of brainstorming and creativity and doesn't aim to offer bullet guns, magical formulas, or universal truths about how to approach AppSec, mainly because there is no such thing. 
 
-Instead, this is about ideas I've been brainstorming for a long time during my journey in information security. That said, this insight may also help you somehow, whether you're developing or testing application controls. 
+Instead, this is about ideas I've been polishing for a long time during my journey in information security. That said, this insight may also help you somehow, whether you're developing or testing application controls. 
 
-
+<br>
 
 Available Case Studies in this first release:
 
@@ -22,5 +22,8 @@ Available Case Studies in this first release:
 |**LFCS-2**|[Insecure Identity Validation Workflow](https://github.com/s4dhulabs/LFWFBD/blob/main/Cases/LFCS-2.md) |2|In progress :factory_worker:
 
 <br>
+
+### What about this name?
+This is a reminder that logic flaws and insecure design issues could affect your business, clients, and the whole user experience. Still, in theory, everything will be fine, according to the plan.
 
 _Soon we'll have a guide on how this project can be used from different perspectives and goals._
