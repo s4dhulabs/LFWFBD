@@ -86,7 +86,7 @@ Compaq/Microcom 6000 Access Integrator does not disconnect a client after a cert
 which allows remote attackers to guess usernames or passwords via a brute force attack.
 ```
 
-As we can see, the case studied here is so problematic and with such a wild spread misconception about how to handle it that the potential solution presented by the researcher also creates new ubiquitous issues. In this way, we have two interesting statements here:
+As we can see, the case studied here is so problematic and with such a wild spread misconception about how to handle it that the potential solution also creates new ubiquitous issues. In this way, we have two interesting statements here:
 
 1.       [The affected technology] does not disconnect a client after a certain number of failed login attempts
 
@@ -94,7 +94,7 @@ As we can see, the case studied here is so problematic and with such a wild spre
 
 <br>
 
-The situation here is that if we put the first statement into practice, the researcher's advice, we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
+The situation here is that if we put the first statement into practice we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
 
 
 
