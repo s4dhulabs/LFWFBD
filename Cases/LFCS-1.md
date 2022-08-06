@@ -114,8 +114,9 @@ Although it is relatively easy to find real word vulnerabilities in this studied
 🔖 In the first one CVE-1999-**1152** the Analysis Description section says: 
 
 ```
-Compaq/Microcom 6000 Access Integrator does not disconnect a client after a certain number of failed login attempts, 
-which allows remote attackers to guess usernames or passwords via a brute force attack.
+Compaq/Microcom 6000 Access Integrator does not disconnect a client
+after a certain number of failed login attempts, which allows remote
+attackers to guess usernames or passwords via a brute force attack.
 ```
 
 As we can see, the case studied here is so problematic and with such a wild spread misconception about how to handle it that the potential solution also creates new ubiquitous issues. In this way, we have two interesting statements here:
@@ -148,9 +149,10 @@ And if you don't do that, so you'll hit line 4, and the attack will continue, an
 
 🔖 In the second vulnerability CVE-1999-**1324** we have:
 ```
-VAXstations running Open VMS 5.3 through 5.5-2 with VMS DECwindows or MOTIF do not properly 
-disable access to user accounts that exceed the break-in limit threshold for failed login attempts, 
-which makes it easier for attackers to conduct brute force password guessing.
+VAXstations running Open VMS 5.3 through 5.5-2 with VMS DECwindows or
+MOTIF do not properly disable access to user accounts that exceed the
+break-in limit threshold for failed login attempts, which makes it easier
+for attackers to conduct brute force password guessing.
 ```
 
 <br/>
