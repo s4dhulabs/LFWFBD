@@ -142,7 +142,7 @@ In this way, we'll have something like this:
     
 ```
 
-Important to note that our point here is to discuss those less evident side-effects of taking such reactive actions because, of course, in the pseudo-code above, the line 2 is going to mitigate the attack but also prejudice the user, even if the attack was not succeeded. 
+Important to note that our point here is to discuss those less evident side-effects of taking such negative/reactive actions because, of course, in the pseudo-code above, the line 2 is going to mitigate the attack but also prejudice the user, even if the attack was not succeeded. 
 
 And if you don't do that, so you'll hit line 4, and the attack will continue, and with so, you'll be at risk of having your application, user identity, and client database compromised. 
 
