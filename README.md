@@ -12,6 +12,9 @@ Equally crucial to heads up that this project is a product of brainstorming and 
 
 Instead, this is about ideas I've been polishing for a long time during my journey in information security. That said, this insight may also help you somehow, whether you're developing or testing application controls. 
 
+#### What about this name?
+This synthesizes the own nature and motivation for this project. It's a kind reminder that logic flaws and insecure design issues could affect your business, clients, and the whole user experience. Still, in theory, everything will be just fine, according to the plan, no [detectable] vulnerabilities to be worried about. 
+
 <br>
 
 Available Case Studies in this first release:
@@ -23,8 +26,7 @@ Available Case Studies in this first release:
 
 <br>
 
-### What about this name?
-This synthesizes the own nature and motivation for this project. It's a kind reminder that logic flaws and insecure design issues could affect your business, clients, and the whole user experience. Still, in theory, everything will be just fine, according to the plan, no [detectable] vulnerabilities to be worried about. 
+
 
 <br>
 
