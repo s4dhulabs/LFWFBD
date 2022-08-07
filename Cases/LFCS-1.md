@@ -19,10 +19,11 @@ flowchart LR
 2. [Complexities and Misconceptions](#item2) 
 3. [Mitigation Insights](#item3) 
 4. [Conclusion](#item4) 
+5. [External References](#ref1)
 <br/>
 
 ### Overview<a name="item1"></a>
-
+---
 Negative/Reactive controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
 
@@ -59,6 +60,8 @@ _This matrix is meant to be used as a general reference to identify, test, and m
 <br/>
 
 ### 1.1 - Insecure Reactive Controls: Authentication<a name="subitem1"></a>
+---
+
 This scenario is maybe the most common one where we're talking about Basic Authentication. In this case the flaw arises from an effort to stop the attacker's activities via application controls. Usually is based on the idea of the maximum number of attempts allowed. After which, the user will be blocked for some time. 
 
 <br/>
@@ -100,6 +103,9 @@ graph LR
 In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
 
 ### Complexities and Misconceptions<a name="item2"></a>
+
+---
+
 _[Section in progress]_
 
 Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. Let's take, for example these two CVE IDs below: 
@@ -168,6 +174,7 @@ And splitting it again into two statements (1. what the technology is missing, a
 As you can see, the analysis will return to the same issues we saw in the previous CVE. Here I would like to highlight just one detail: ``` the threshold for failed login attempts ```. This characteristic is directly related to the most common negative/reactive controls, yet, it is hard to conceive some aspects of it, such as how to reasonably hit the consensus about how many attempts are enough or how to establish a fair amount of time until the next round. 
 
 ### Mitigation Insights<a name="item3"></a> 
+---
 _[Section in progress]_
 
 The below acronyms refer to approaches and controls related to LFCS 1.1.
@@ -268,6 +275,7 @@ Review the reference items on the scenario matrix table in the begin, that inclu
 _Continue..._
 
 ### Conclusion:<a name="item4"></a> 
+---
 
 Besides the fact that this approach is not effective, it also create new problems such as:
 
@@ -276,7 +284,7 @@ Besides the fact that this approach is not effective, it also create new problem
 * Business workflow disruption
 * User friction/bad UX 
 
-### External References:
+### External References:<a name="ref1"></a> 
 
 * https://owasp.org/
 * https://attack.mitre.org/
