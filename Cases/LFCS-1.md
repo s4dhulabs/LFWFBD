@@ -11,8 +11,8 @@ flowchart LR
 <br/>
 
 ### Table of contents
-1. [Insecure Reactive Controls: Authentication](#item1)
-    * [Flow Analysis](#subitem1)
+1. [Overview](#item1)<br>
+2. [Insecure Reactive Controls: Authentication](#subitem1)
     * [Premisse](#subitem2)
     * [User perspective](#subitem3)
     * [Outcome](#subitem4)
@@ -21,9 +21,9 @@ flowchart LR
 4. [Conclusion](#item4) 
 <br/>
 
-## 1.1: Insecure Reactive Controls: Authentication<a name="item1"></a>
+### Overview<a name="item1"></a>
 
-Lockout controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
+Negative/Reactive controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
 
 In general lines, the relationships between the control and its actions in the LFCS-1 perspective can be seen below: 
@@ -58,7 +58,7 @@ _This matrix is meant to be used as a general reference to identify, test, and m
 <br/>
 <br/>
 
-#### LFCS-1.1 Flow Analysis<a name="subitem1"></a>
+### 1.1 - Insecure Reactive Controls: Authentication<a name="subitem1"></a>
 This scenario is maybe the most common one where we're talking about Basic Authentication. In this case the flaw arises from an effort to stop the attacker's activities via application controls. Usually is based on the idea of the maximum number of attempts allowed. After which, the user will be blocked for some time. 
 
 <br/>
@@ -236,7 +236,7 @@ graph TB
 
 _Continue..._
 
-### Checklist
+#### Checklist
 _[Section in progress]_
 Review the reference items on the scenario matrix table in the begin, that includes validations as:
 
