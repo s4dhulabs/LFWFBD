@@ -126,25 +126,25 @@ As we can see, the case studied here is so problematic and with such a wild spre
     2. [Statement 1] allows remote attackers to guess usernames or passwords via a brute force attack
 
 
-The situation here is that if we put the first statement into practice we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
+If we implement the first statement we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
 
 Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
 
 In this way, we'll have something like this:
 
 ```python
-1   if apply(sttmt1):
-2       do(NRA-) 
-3   if not_apply(sttm1):
-4       happens(sttm2)
-5   else:
-6       design_do(PPA+)
+1   IF APPLY(sttmt1):
+2       DO(NRA-) 
+3   IF NOT(sttm1):
+4       EVENT(sttm2)
+5   ELSE:
+6       DESIGN(PPA+)
     
 ```
 
-Important to note that our point here is to discuss those less evident side-effects of taking such negative/reactive actions because, of course, in the pseudo-code above, the line 2 is going to mitigate the attack but also prejudice the user, even if the attack was not succeeded. 
+Important to note that our point here is to discuss those less evident side-effects of taking such negative/reactive actions because, of course, in the pseudo-code above, the line **2** is going to mitigate the attack but also prejudice the user, even if the attack was not succeeded. 
 
-And if you don't do that, so you'll hit line 4, and the attack will continue, and with so, you'll be at risk of having your application, user identity, and client database compromised. 
+And if you don't do that, so you'll hit line **4**, and the attack will continue, and with so, you'll be at risk of having your application, user identity, and client database compromised. 
 <br/><br/>
 
 🔖 In the second vulnerability CVE-1999-**1324** we have the following Analysis Description:
@@ -164,6 +164,8 @@ And splitting it again into two statements (1. what the technology is missing, a
     2. [Statement 1] makes it easier for attackers to conduct brute force password guessing.
 
 <br/>
+
+As you can see, the analysis will return to the same issues we saw in the previous CVE. Here I would like to highlight just one detail: ``` the threshold for failed login attempts ```. This characteristic is directly related to the most common negative/reactive controls, yet, it is hard to conceive some aspects of it, such as how to reasonably hit the consensus about how many attempts are enough or how to establish a fair amount of time until the next round. 
 
 ### Mitigation Insights<a name="item3"></a> 
 _[Section in progress]_
@@ -193,7 +195,7 @@ graph TB
     %% requirements
     req1((<b>EPC+</b><br>Incremental <br> Requirement))
     req2((Contextual <br> action))
-    req3((Other again))
+    req3((Defense in Depth))
     
     na1>Delay]
     na2>Disconnection]
