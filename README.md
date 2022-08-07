@@ -5,7 +5,7 @@ A collection of AppSec case studies on business logic flaws and insecure design 
 
 
 
-### Overview
+## Overview
 The first thing to be aware of here is: It is meant to be precisely what the name indicates: **Case studies** into how to look at the issues and possibly handle them in a less harmful fashion (and more creative one).
 
 Equally crucial to heads up that this project is a product of brainstorming and creativity and doesn't aim to offer bullet guns, magical formulas, or universal truths about how to approach AppSec, mainly because there is no such thing. 
