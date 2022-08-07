@@ -238,7 +238,7 @@ graph TB
 
 _Continue..._
 
-#### Checklist
+### Checklist
 _[Section in progress]_
 Review the reference items on the scenario matrix table in the begin, that includes validations as:
 
