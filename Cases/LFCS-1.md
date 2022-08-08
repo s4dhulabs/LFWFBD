@@ -12,14 +12,15 @@ flowchart LR
 
 ## Table of contents
 1. [Overview](#item1)<br>
-2. [Insecure Reactive Controls: Authentication](#subitem1)
+    * [Logicflow](#Logicflow)
+3. [Insecure Reactive Controls: Authentication](#subitem1)
     * [Premisse](#subitem2)
     * [User perspective](#subitem3)
     * [Outcome](#subitem4)
-2. [Complexities and Misconceptions](#item2) 
-3. [Mitigation Insights](#item3) 
-4. [Conclusion](#item4) 
-5. [External References](#ref1)
+4. [Complexities and Misconceptions](#item2) 
+5. [Mitigation Insights](#item3) 
+6. [Conclusion](#item4) 
+7. [External References](#ref1)
 <br/>
 
 ## Overview<a name="item1"></a>
@@ -27,9 +28,11 @@ flowchart LR
 Negative/Reactive controls work in a delicate balance where some undesired actions have been identified on the application/system and should be stopped. 
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
 
+### Logicflow<a name="Logicflow"></a>
 In general lines, the relationships between the control and its actions in the LFCS-1 perspective can be seen below: 
 
 ```mermaid
+
 flowchart LR
     subgraph <b>Reactive Measures</b>
         Lockout
@@ -48,9 +51,6 @@ flowchart LR
         Events-.->Control
     end
 
-
-
-    
 ```
 
 <br>
