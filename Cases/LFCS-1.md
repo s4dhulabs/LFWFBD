@@ -13,6 +13,7 @@ flowchart LR
 ## Table of contents
 1. [Overview](#item1)<br>
     * [Logicflow](#Logicflow)
+    * [Cross-reference Matrix](#CRM)
 3. [Insecure Reactive Controls: Authentication](#subitem1)
     * [Premisse](#subitem2)
     * [User perspective](#subitem3)
@@ -55,13 +56,14 @@ flowchart LR
 
 <br>
 
-_LFCS 1.1 scenario matrix references_
+### Cross-reference Matrix<a name="CRM"></a>
+This matrix is meant to be used as a general reference to identify, test, and mitigate the scenario studied in this item.
+
 | **ASVS** | **CWE**  | **OWASP Top 10**  | **ATT&CK**  | **WSTG** | **OAT** | **Techniques** | **Components** | **Properties** |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 |1.2.3 <br/> 1.11.1 <br />  1.11.2 <br /> 1.11.3 <br /> 11.1.3 <br />  11.1.4  <br /> 11.1.5 <br /> 11.1.7| 1059 <br/> 770 <br /> 840 <br /> 841 <br /> 754 <br/> 307 | A04:2021 <br/> A07:2021 |T1110.001 <br/>  T1110.002 <br/>  T1110.003 <br/> T1110.004 <br/> T1592.002 <br/> T1589.001 <br/> T1589.002 <br/> T1589.003| BUSL-07 | 015 | Reconnaissance <br/> Brute Force | Credentials <br/> Email Addresses <br/> Employee Names | C <br/> A
 
-_This matrix is meant to be used as a general reference to identify, test, and mitigate the scenario studied in this item._
-<br/>
+`LFCS 1.1 scenario matrix references`
 <br/>
 
 ## 1.1 - Insecure Reactive Controls: Authentication<a name="subitem1"></a>
