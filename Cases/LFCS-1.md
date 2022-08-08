@@ -5,7 +5,7 @@
 ```mermaid
 flowchart LR
     id1(<b> ID: LFCS-1     </b>)
-    style id1 fill:#f921,stroke:#333,stroke-width:2px
+    style id1 fill:#64665e,stroke:#dad8d7,color:white;,stroke-width:2px
 ```
 <br/>
 <br/>
