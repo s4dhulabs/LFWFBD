@@ -31,21 +31,26 @@ In general lines, the relationships between the control and its actions in the L
 
 ```mermaid
 flowchart LR
-    subgraph <b>Reactive Actions</b>
-    Lockout
-    Disconnection
-    Deactivation 
-    Delay
+    subgraph <b>Reactive Measures</b>
+        Lockout
+        Disconnection
+        Deactivation 
+        Delay
     end
-    %%subgraph two
-    %%b1-->b2
-    %%end
     subgraph <b>LFCS-1</b>
-    Control-.->Lockout
-    Control-.->Disconnection
-    Control-.->Delay
-    Control-.->Deactivation
+        Control-.->Lockout
+        Control-.->Disconnection
+        Control-.->Delay
+        Control-.->Deactivation
     end
+    subgraph <b>Triggers</b>
+        Actions-->Control
+        Events-.->Control
+    end
+
+
+
+    
 ```
 
 <br>
