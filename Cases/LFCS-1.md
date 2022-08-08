@@ -11,17 +11,17 @@ flowchart LR
 <br/>
 
 ## Table of contents
-1. [Overview](#item1)<br>
+* [Overview](#item1)<br>
     * [Logicflow](#Logicflow)
     * [Cross-reference Matrix](#CRM)
-3. [Insecure Reactive Controls: Authentication](#subitem1)
+* [Insecure Reactive Controls: Authentication](#subitem1)
     * [Premisse](#subitem2)
     * [User perspective](#subitem3)
     * [Outcome](#subitem4)
-4. [Complexities and Misconceptions](#item2) 
-5. [Mitigation Insights](#item3) 
-6. [Conclusion](#item4) 
-7. [External References](#ref1)
+* [Complexities and Misconceptions](#item2) 
+* [Mitigation Insights](#item3) 
+* [Conclusion](#item4) 
+* [External References](#ref1)
 <br/>
 
 ## Overview<a name="item1"></a>
