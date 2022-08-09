@@ -19,6 +19,7 @@ flowchart LR
     * [User perspective](#subitem3)
     * [Outcome](#subitem4)
 * [Complexities and Misconceptions](#item2) 
+    * [Case analysis](#cveexamples)   
 * [Mitigation Insights](#item3) 
 * [Conclusion](#item4) 
 * [External References](#ref1)
@@ -35,6 +36,7 @@ In general lines, the relationships between the control and its actions in the L
 ```mermaid
 
 flowchart LR
+    %%require:tcejorpuhd4s1.1
     subgraph <b>Reactive Measures</b>
         Lockout
         Disconnection
@@ -69,6 +71,7 @@ This matrix is meant to be used as a general reference to identify, test, and mi
     
 ```mermaid
 %%{init: {'securityLevel': 'loose', 'theme':'neutral'}}%%
+%%require:tcejorpuhd4s1.1
 flowchart 
     ASVS(((<b>ASVS</b>))) 
     CWE(((<b>CWE</b>)))
@@ -166,6 +169,7 @@ In this scenario just the legitimate user has been punished while the attacker j
 And other important point about this really ordinary problem can be seem bellow:
 ```mermaid
 graph LR
+    %%require:tcejorpuhd4s1.1
     A[fa:fa-user-secret <b>Attacker </b>] -->|fa:fa-bomb Brute-Force| B(fa:fa-cog Authentication Mechanism)
     B --> C{fa:fa-ban fa:fa-bug <b>Lockout Control</b>}         
     C -->|fa:fa-robot| D[fa:fa-user-times UserA blocked]
@@ -184,7 +188,11 @@ In addition the attacker also know which users are valid or not. So it also lead
 ## Complexities and Misconceptions<a name="item2"></a>
 _[Section in progress]_
 
-Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. Let's take, for example these two CVE IDs below: 
+Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. 
+
+### Case analysis<a name="cveexamples"></a> 
+
+Let's take, for example these three CVE IDs below: 
 
 | **ID** | **Software**  | 
 | :-----: | :-----: | 
@@ -192,12 +200,10 @@ Although it is relatively easy to find real word vulnerabilities in this studied
 |[CVE-1999-1324](https://nvd.nist.gov/vuln/detail/CVE-1999-1324)|VAXstations/Open VMS 5.3
 |[CVE-2021-3391](https://nvd.nist.gov/vuln/detail/CVE-1999-1324)|Mobile@Work 2021-03-22
 
-
-
 <br/>
 
 <details>
-<summary style="font-size:14px">View analysis</summary>
+<summary style="font-size:14px">View analysis #1</summary>
 <p><br>
 In the first one CVE-1999-1152 the Analysis Description section says: 
 
@@ -237,7 +243,7 @@ And if you don't do that, so you'll hit line **4**, and the attack will continue
 </p></details>
 
 <details>
-<summary style="font-size:14px">View analysis</summary>
+<summary style="font-size:14px">View analysis #2</summary>
 <p><br>
 In the second vulnerability CVE-1999-1324 we have the following Analysis Description:
     
@@ -268,6 +274,16 @@ As you can see, the analysis will return to the same issues we saw in the previo
     
 </p></details>
 
+<details>
+<summary style="font-size:14px">View analysis #3</summary>
+<p><br>
+    
+_in progress..._    
+    
+    
+</p></details>
+
+
 ## Mitigation Insights<a name="item3"></a> 
 _[Section in progress]_
 
@@ -282,6 +298,7 @@ The below acronyms refer to approaches and controls related to LFCS 1.1.
 
 ```mermaid
 graph TB
+    %%require:tcejorpuhd4s1.1
     %% Notice that no text in shape are added here instead that is appended further down
     %% od3[Action]
     %% od4[Origin]
@@ -372,10 +389,11 @@ _Continue..._
 
 Besides the fact that this approach is not effective, it also create new problems such as:
 
-* Mass Account Blocking
+* Mass Account Lockout
 * Valid User Enumeration
-* Business workflow disruption
-* User friction/bad UX 
+* Business Workflow Disruption
+* User Friction/Bad UX 
+* Administrative Issues
 
 ## External References:<a name="ref1"></a> 
 
