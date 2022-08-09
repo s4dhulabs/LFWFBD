@@ -358,30 +358,50 @@ _Continue..._
 _[Section in progress]_
 Review the reference items on the scenario matrix table in the begin, that includes validations as:
 
-#### ⚙️ OWASP ASVS
+
+<details>
+    <summary style="font-size:14px"><b>⚙️ OWASP ASVS</b></summary>
+<p><br>
+
 | **Item** | **Control**  | 
 | :-----: | :-----: | 
 |**V1.2**|[Authentication Architecture](https://github.com/OWASP/ASVS/blob/v4.0.3/4.0/en/0x10-V1-Architecture.md#v12-authentication-architecture)
 |**V1.11**|[Business Logic Architecture](https://github.com/OWASP/ASVS/blob/v4.0.3/4.0/en/0x10-V1-Architecture.md#v111-business-logic-architecture)
 |**V11.1**|[Business Logic Security](https://github.com/OWASP/ASVS/blob/v4.0.3/4.0/en/0x19-V11-BusLogic.md)
 
-#### ⚙️ MITRE ATT&CK
+</p></details>
+
+<details>
+    <summary style="font-size:14px"><b>⚙️ MITRE ATT&CK</b></summary>
+<p><br>
+
 | **ID** | **Requirement**  | 
 | :-----: | :-----: | 
 |**T1110**|[Brute Force](https://attack.mitre.org/techniques/T1110/) 
 |**T1592**|[Gather Victim Host Information](https://attack.mitre.org/techniques/T1592/)
 
-#### ⚙️ OWASP Top 10 
+</p></details>
+
+<details>
+    <summary style="font-size:14px"><b>⚙️ OWASP Top 10 </b></summary>
+<p><br>
+ 
 | **ID** | **Requirement**  | 
 | :-----: | :-----: | 
 |**A04:2021**|[Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/) 
 |**A07:2021**|[Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
 
-#### ⚙️ OWASP Security Testing Guide
+</p></details>
+
+<details>
+    <summary style="font-size:14px"><b>⚙️ OWASP Security Testing Guide</b></summary>
+<p><br>
+    
 | **ID** | **Requirement**  | 
 | :-----: | :-----: | 
 |**WSTG-BUSL-07**|[Test Defenses Against Application Misuse](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/10-Business_Logic_Testing/07-Test_Defenses_Against_Application_Misuse.md)
 
+</p></details>
 
 _Continue..._
 
