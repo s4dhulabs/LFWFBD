@@ -177,7 +177,7 @@ And splitting it again into two statements (1. what the technology is missing, a
 As you can see, the analysis will return to the same issues we saw in the previous CVE. Here I would like to highlight just one detail: ``` the threshold for failed login attempts ```. This characteristic is directly related to the most common negative/reactive controls, yet, as simple as it seems, it's tricky to conceive some crucial aspects, such as: 
 
 * How to avoid concurrency-related issue
-* How to you protect administrative accounts
+* How to protect administrative accounts
 * How to establish a fair amount of time until the next round. 
 * How to reasonably hit the consensus about how many attempts are enough 
 
