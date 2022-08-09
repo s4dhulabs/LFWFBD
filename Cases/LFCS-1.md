@@ -6,7 +6,7 @@
 flowchart LR
     %% LFWFBD:LFCS-01.1
     id1(<b> ID: LFCS-01     </b>)
-    style id1 fill:#64665e,stroke:#dad8d7,color:white;,stroke-width:2px
+    style id1 fill:#000000,stroke:#eeeeee,color:white;,stroke-width:3px
 ```
 <br/>
 <br/>
