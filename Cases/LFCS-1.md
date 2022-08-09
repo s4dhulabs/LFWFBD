@@ -63,7 +63,80 @@ This matrix is meant to be used as a general reference to identify, test, and mi
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 |1.2.3 <br/> 1.11.1 <br />  1.11.2 <br /> 1.11.3 <br /> 11.1.3 <br />  11.1.4  <br /> 11.1.5 <br /> 11.1.7| 1059 <br/> 770 <br /> 840 <br /> 841 <br /> 754 <br/> 307 | A04:2021 <br/> A07:2021 |T1110.001 <br/>  T1110.002 <br/>  T1110.003 <br/> T1110.004 <br/> T1592.002 <br/> T1589.001 <br/> T1589.002 <br/> T1589.003| BUSL-07 | 015 | Reconnaissance <br/> Brute Force | Credentials <br/> Email Addresses <br/> Employee Names | C <br/> A
 
-`LFCS 1.1 scenario matrix references`
+<details>
+<summary style="font-size:14px">View relationship</summary>
+<p>
+    
+```mermaid
+%%{init: {'securityLevel': 'loose', 'theme':'neutral'}}%%
+flowchart 
+    ASVS(((<b>ASVS</b>))) 
+    CWE(((<b>CWE</b>)))
+    Top10(((<b>OWASP Top10</b>)))
+    ATT&CK(((<b>ATT&CK</b>)))
+    WSTG(((<b>WSTG</b>)))
+    OAT(((<b>OAT</b>)))
+    
+    Designing[/Designing\]
+    Building[/Building\]
+    Testing[/Testing\]
+    
+    Describing[/Describing\]
+    Checking[/Checking\]
+    Evaluating[/Evaluating\]
+    Identifing[/Identifing\]
+    Classifing[/Classifing\]
+    
+    Awareness[/Awareness\]
+    Knowledge[/Knowledge\]
+    Behaviors[/Behaviors\]
+    
+    Tactics>Tactics]
+    Techniques>Techniques]
+    Procedures>Procedures]
+    Vulnerabilities>Vulnerabilities]
+    Risks>Risks]
+    Taxonomies>Taxonomies]
+    Threats>Threats]
+    Weakness>Weakness]
+    ExpLike>exploitation<br>likelihood]
+    Errors>Errors]
+    
+    ASVS -.-> Designing
+    ASVS -.-> Building
+    ASVS -.-> Testing
+    
+    CWE -.-> Describing
+    CWE -.-> Checking
+    CWE -.-> Evaluating
+    CWE -.-> Identifing
+    CWE ---> Weakness
+    CWE ---> ExpLike
+    CWE ---> Errors
+    
+    Top10 -.-> Awareness
+    Top10 -.-> Knowledge
+    Top10--->Vulnerabilities
+    Top10--->Risks
+    
+    ATT&CK -.-> Behaviors
+    ATT&CK -.-> Knowledge
+    ATT&CK--->Tactics
+    ATT&CK--->Techniques
+    ATT&CK--->Procedures
+    
+    WSTG -.-> Testing
+    OAT -.-> Identifing
+    OAT -.-> Classifing
+    OAT ---> Threats
+    OAT ---> Taxonomies
+    OAT -.-> Building
+    
+```
+
+
+</p></details>
+
 <br/>
 
 ## 1.1 - Insecure Reactive Controls: Authentication<a name="subitem1"></a>
@@ -117,10 +190,16 @@ Although it is relatively easy to find real word vulnerabilities in this studied
 | :-----: | :-----: | 
 |[CVE-1999-1152](https://nvd.nist.gov/vuln/detail/CVE-1999-1152)|Compaq/Microcom 6000 Access Integrator
 |[CVE-1999-1324](https://nvd.nist.gov/vuln/detail/CVE-1999-1324)|VAXstations/Open VMS 5.3
+|[CVE-2021-3391](https://nvd.nist.gov/vuln/detail/CVE-1999-1324)|Mobile@Work 2021-03-22
+
+
 
 <br/>
 
-🔖 In the first one CVE-1999-**1152** the Analysis Description section says: 
+<details>
+<summary style="font-size:14px">View analysis</summary>
+<p><br>
+In the first one CVE-1999-1152 the Analysis Description section says: 
 
 ```
 Compaq/Microcom 6000 Access Integrator does not disconnect a client
@@ -155,8 +234,13 @@ Important to note that our point here is to discuss those less evident side-effe
 
 And if you don't do that, so you'll hit line **4**, and the attack will continue, and with so, you'll be at risk of having your application, user identity, and client database compromised. 
 <br/><br/>
+</p></details>
 
-🔖 In the second vulnerability CVE-1999-**1324** we have the following Analysis Description:
+<details>
+<summary style="font-size:14px">View analysis</summary>
+<p><br>
+In the second vulnerability CVE-1999-1324 we have the following Analysis Description:
+    
 ```
 VAXstations running Open VMS 5.3 through 5.5-2 with VMS DECwindows or
 MOTIF do not properly disable access to user accounts that exceed the
@@ -176,10 +260,13 @@ And splitting it again into two statements (1. what the technology is missing, a
 
 As you can see, the analysis will return to the same issues we saw in the previous CVE. Here I would like to highlight just one detail: ``` the threshold for failed login attempts ```. This characteristic is directly related to the most common negative/reactive controls, yet, as simple as it seems, it's tricky to conceive some crucial aspects, such as: 
 
-* How to avoid concurrency-related issue
-* How to protect administrative accounts
+* How to protect administrative accounts.
+* How to avoid concurrency-related issues.
+* How to avoid account lockout threshold bypass.
 * How to establish a fair amount of time until the next round. 
-* How to reasonably hit the consensus about how many attempts are enough 
+* How to reasonably hit the consensus about how many attempts are enough.
+    
+</p></details>
 
 ## Mitigation Insights<a name="item3"></a> 
 _[Section in progress]_
