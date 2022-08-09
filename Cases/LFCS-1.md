@@ -4,7 +4,8 @@
 
 ```mermaid
 flowchart LR
-    id1(<b> ID: LFCS-1     </b>)
+    %% LFWFBD:LFCS-01.1
+    id1(<b> ID: LFCS-01     </b>)
     style id1 fill:#64665e,stroke:#dad8d7,color:white;,stroke-width:2px
 ```
 <br/>
@@ -23,6 +24,7 @@ flowchart LR
 * [Mitigation Insights](#item3) 
 * [Conclusion](#item4) 
 * [External References](#ref1)
+* [Referencing this study](#studyref1)
 <br/>
 
 ## Overview<a name="item1"></a>
@@ -31,19 +33,19 @@ Negative/Reactive controls work in a delicate balance where some undesired actio
 How it's based on a negative approach (stop/deny/restrict/ban something or someone), it must be implemented carefully, or else a threat actor can [abuse](https://capec.mitre.org/data/definitions/210.html) these negative properties to take advantage of the insecure design to prejudice the legitimate user, enumerate valid resources and disrupt the business logic workflows.
 
 ### Logicflow<a name="Logicflow"></a>
-In general lines, the relationships between the control and its actions in the LFCS-1 perspective can be seen below: 
+In general lines, the relationships between the control and its actions in the LFCS-01 perspective can be seen below: 
 
 ```mermaid
 
 flowchart LR
-    %%require:tcejorpuhd4s1.1
+    %%require:tcejorpuhd4s1.1/Logic Flaws, Insecure Design, Appsec
     subgraph <b>Reactive Measures</b>
         Lockout
         Disconnection
         Deactivation 
         Delay
     end
-    subgraph <b>LFCS-1</b>
+    subgraph <b>LFCS-01</b>
         Control-.->Lockout
         Control-.->Disconnection
         Control-.->Delay
@@ -142,7 +144,7 @@ flowchart
 
 <br/>
 
-## 1.1 - Insecure Reactive Controls: Authentication<a name="subitem1"></a>
+## 1 - Insecure Reactive Controls: Authentication<a name="subitem1"></a>
 
 This scenario is maybe the most common one where we're talking about Basic Authentication. In this case the flaw arises from an effort to stop the attacker's activities via application controls. Usually is based on the idea of the maximum number of attempts allowed. After which, the user will be blocked for some time. 
 
@@ -198,7 +200,7 @@ Let's take, for example these three CVE IDs below:
 | :-----: | :-----: | 
 |[CVE-1999-1152](https://nvd.nist.gov/vuln/detail/CVE-1999-1152)|Compaq/Microcom 6000 Access Integrator
 |[CVE-1999-1324](https://nvd.nist.gov/vuln/detail/CVE-1999-1324)|VAXstations/Open VMS 5.3
-|[CVE-2021-3391](https://nvd.nist.gov/vuln/detail/CVE-1999-1324)|Mobile@Work 2021-03-22
+|[CVE-2022-30600](https://nvd.nist.gov/vuln/detail/CVE-2022-30600)|Moodle Platform <=4.0
 
 <br/>
 
@@ -394,7 +396,7 @@ Review the reference items on the scenario matrix table in the begin, that inclu
 </p></details>
 
 <details>
-    <summary style="font-size:14px"><b>⚙️ OWASP Security Testing Guide</b></summary>
+    <summary style="font-size:14px"><b>⚙️ OWASP Testing Guide</b></summary>
 <p><br>
     
 | **ID** | **Requirement**  | 
@@ -414,6 +416,7 @@ Besides the fact that this approach is not effective, it also create new problem
 * Business Workflow Disruption
 * User Friction/Bad UX 
 * Administrative Issues
+* Resource consumption
 
 ## External References:<a name="ref1"></a> 
 
@@ -422,4 +425,6 @@ Besides the fact that this approach is not effective, it also create new problem
 * https://cwe.mitre.org/
 * https://nvd.nist.gov/
 
-<br>
+## Referencing this study:<a name="studyref1"></a>  
+You can use the following format to refer to this study: ```{Project}:{Study Case Id}.{item}```, which in this case means: ```LFWFBD:LFCS-01.1```. In addition, you can also specify the Git after the study references to be more specific, if you need, such as: ```LFWFBD:LFCS-01.1 s4dhulabs``` or yet ```LFWFBD:LFCS-01.1@s4dhulabs```
+
