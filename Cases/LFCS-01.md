@@ -307,14 +307,14 @@ As you noticed, we're talking about an entirely different perspective in this ca
  14 -    $sincescuccess = get_user_preferences('login_failed_count_since_success', $count, $user);
  15 -    $sincescuccess = $sincescuccess + 1;
  16 -    set_user_preference('login_failed_count_since_success', $sincescuccess, $user);
- 17 +    // Force user preferences cache reload to ensure the most up-to-date login_failed_count is fetched.
- 18 +    // This is perhaps overzealous but is the documented way of reloading the cache, as per the test method
- 19 +    // 'test_check_user_preferences_loaded'.
- 20 +    unset($user->preference);
- 21 +
- 22 +    $resource = 'user:' . $user->id;
+*17 +    // Force user preferences cache reload to ensure the most up-to-date login_failed_count is fetched.
+*18 +    // This is perhaps overzealous but is the documented way of reloading the cache, as per the test method
+*19 +    // 'test_check_user_preferences_loaded'.
+*20 +    unset($user->preference);
+*21 +
+*22 +    $resource = 'user:' . $user->id;
 *23 +    $lockfactory = \core\lock\lock_config::get_lock_factory('core_failed_login_count_lock');
- 24 +
+*24 +
 *25 +    // Get a new lock for the resource, waiting for it for a maximum of 10 seconds.
 *26 +    if ($lock = $lockfactory->get_lock($resource, 10)) {
  27 +        try {
@@ -370,7 +370,13 @@ As you noticed, we're talking about an entirely different perspective in this ca
 *77 +        throw new moodle_exception('locktimeout');
  78      }
  79  }
-~          
+         
+```
+    
+It's a lot of code, but we're particularly interested in star (*) points. First, the lines from 17 to 26 seem to be an essential part of the fix and, as such, are also crucial to understanding the issue. This code snippet, starting with the three lines comments (line 17), gives us some insights into how the bypass worked, especially this one:
+
+```php
+// Force user preferences cache reload to ensure the most up-to-date login_failed_count is fetched.
 ```
     
     
