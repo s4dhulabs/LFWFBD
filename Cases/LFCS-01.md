@@ -280,7 +280,98 @@ As you can see, the analysis will return to the same issues we saw in the previo
 <summary style="font-size:14px">View analysis #3</summary>
 <p><br>
     
-_in progress..._    
+The CVE-2022-30600 description says: 
+
+```
+A flaw was found in moodle where logic used to count failed login attempts
+could result in the account lockout threshold being bypassed.
+
+```
+
+As you noticed, we're talking about an entirely different perspective in this case. Here the abuse is due not to a lack of control but a logical bypass. Even though we don't have the proof of concept to figure out how it works precisely, still, we have the [commit](https://git.moodle.org/gw?p=moodle.git;a=commitdiff;h=59b5858da200f63ecb59a9113af2b99ef1496fe5) to fix the issue itself. 
+    
+```php
+  1 /**
+  2   * To be called after failed user login.
+  3   * @param stdClass $user
+  4 + * @throws moodle_exception
+  5   */
+  6  function login_attempt_failed($user) {
+  7      global $CFG;
+  8 @@ -888,30 +889,53 @@ function login_attempt_failed($user) {
+  9          return;
+ 10      }
+ 11 
+ 12 -    $count = get_user_preferences('login_failed_count', 0, $user);
+ 13 -    $last = get_user_preferences('login_failed_last', 0, $user);
+ 14 -    $sincescuccess = get_user_preferences('login_failed_count_since_success', $count, $user);
+ 15 -    $sincescuccess = $sincescuccess + 1;
+ 16 -    set_user_preference('login_failed_count_since_success', $sincescuccess, $user);
+ 17 +    // Force user preferences cache reload to ensure the most up-to-date login_failed_count is fetched.
+ 18 +    // This is perhaps overzealous but is the documented way of reloading the cache, as per the test method
+ 19 +    // 'test_check_user_preferences_loaded'.
+ 20 +    unset($user->preference);
+ 21 +
+ 22 +    $resource = 'user:' . $user->id;
+*23 +    $lockfactory = \core\lock\lock_config::get_lock_factory('core_failed_login_count_lock');
+ 24 +
+*25 +    // Get a new lock for the resource, waiting for it for a maximum of 10 seconds.
+*26 +    if ($lock = $lockfactory->get_lock($resource, 10)) {
+ 27 +        try {
+ 28 +            $count = get_user_preferences('login_failed_count', 0, $user);
+ 29 +            $last = get_user_preferences('login_failed_last', 0, $user);
+ 30 +            $sincescuccess = get_user_preferences('login_failed_count_since_success', $count, $user);
+ 31 +            $sincescuccess = $sincescuccess + 1;
+ 32 +            set_user_preference('login_failed_count_since_success', $sincescuccess, $user);
+ 33 +
+ 34 +            if (empty($CFG->lockoutthreshold)) {
+ 35 +                // No threshold means no lockout.
+ 36 +                // Always unlock here, there might be some race conditions or leftovers when switching threshold.
+ 37 +                login_unlock_account($user);
+*38 +                $lock->release();
+ 39 +                return;
+ 40 +            }
+ 41 
+ 42 -    if (empty($CFG->lockoutthreshold)) {
+ 43 -        // No threshold means no lockout.
+ 44 -        // Always unlock here, there might be some race conditions or leftovers when switching threshold.
+ 45 -        login_unlock_account($user);
+ 46 -        return;
+ 47 -    }
+ 48 +            if (!empty($CFG->lockoutwindow) and time() - $last > $CFG->lockoutwindow) {
+ 49 +                $count = 0;
+ 50 +            }
+ 51 
+ 52 -    if (!empty($CFG->lockoutwindow) and time() - $last > $CFG->lockoutwindow) {
+ 53 -        $count = 0;
+ 54 -    }
+ 55 +            $count = $count + 1;
+ 56 
+ 57 -    $count = $count+1;
+ 58 +            set_user_preference('login_failed_count', $count, $user);
+ 59 +            set_user_preference('login_failed_last', time(), $user);
+ 60 
+ 61 -    set_user_preference('login_failed_count', $count, $user);
+ 62 -    set_user_preference('login_failed_last', time(), $user);
+ 63 +            if ($count >= $CFG->lockoutthreshold) {
+ 64 +                login_lock_account($user);
+ 65 +            }
+ 66 
+ 67 -    if ($count >= $CFG->lockoutthreshold) {
+ 68 -        login_lock_account($user);
+ 69 +            // Release locks when we're done.
+ 70 +            $lock->release();
+*71 +        } catch (Exception $e) {
+*72 +            // Always release the lock on a failure.
+*73 +            $lock->release();
+ 74 +        }
+ 75 +    } else {
+*76 +        // We did not get access to the resource in time, give up.
+*77 +        throw new moodle_exception('locktimeout');
+ 78      }
+ 79  }
+~          
+```
     
     
 </p></details>
