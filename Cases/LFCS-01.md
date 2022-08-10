@@ -378,7 +378,15 @@ It's a lot of code, but we're particularly interested in star (*) points. First,
 ```php
 // Force user preferences cache reload to ensure the most up-to-date login_failed_count is fetched.
 ```
+
+Because these comment lines were introduced in the committed fix, it clearly aims to document something that didn't exist in the original module. In this way, it can be translated to this: 
     
+```
+The previous implementation didn't force the user preferences
+cache to reload and, consequently, could not fetch the most updated
+login_failed_count, despite the fact this is the crucial criteria for
+the logic works properly.
+```
     
 </p></details>
 
