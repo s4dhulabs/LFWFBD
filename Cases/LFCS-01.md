@@ -388,6 +388,19 @@ login_failed_count, despite the fact this is the crucial criteria for
 the logic works properly.
 ```
     
+From 20 to 23, we have the cache reload and the creation of an instance of the [get_lock_factory()](https://wimski.org/api/3.8/dc/d99/classcore_1_1lock_1_1lock__config.html#ad826ad6038b986869a9a9c0741d051a3) class (lockfactory). From lines 20 to 26, we have the important part of the fix, where the developer just moved the entire logic of the original `login_attempt_failed` function to a try-catch block, which is inside the conditional if. Lines 25 and 26 make it clear that the condition to hit the try (27) is being able to get a new lock in a maximum of 10 seconds. 
+    
+From this brief analysis, new questions arise, and the most important one at this point should be: What would happen if the creation of a new lock takes more than 10 seconds? With the fixed code, the execution will jump from line 26 to line 75, where the `else` will throw a new moodle `locktimeout` exception. In addition, as the developer noted on line 76: 
+`// We did not get access to the resource in time, give up.`, which means: whatever we were trying to do here, it was not possible, so just leave things as is. In the context of `login_attempt_failed` function, it will jump the entire logic, and the verification, if the user account should or is already locked, will be skipped. 
+
+Now note the comment on line 44. It says:
+
+```// Always unlock here, there might be some race conditions or leftovers when switching threshold.``` 
+
+And this possibility of a [race condition](https://en.wikipedia.org/wiki/Race_condition) at this point of the code seems to be the root cause of the timeout-related exceptions. If you look at the code, considering the old one (-), you'll notice that in an exception condition, the incrementation of `count` on line 57 will never happen, so the threat will be able to continue whatever was the goal. In addition, because the disruption was not being raised in the vulnerable version, you'll also see some tracebacks and technical information leakage client-side. 
+
+With this in mind, we could infer that the bypass consisted basically of fuzzing the authentication mechanism, causing some delay to interfere with the lock logic. The last note is that regardless of the comment about the necessity of `release the lock on a failure.`, when the execution hits line 77 where the locktimeout is handled (failure), there is no `$lock->release();`.  
+    
 </p></details>
 
 
