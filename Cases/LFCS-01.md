@@ -508,11 +508,27 @@ supposed to help users AND if a threat actor could abuse this legitimate
 feature or some component. 
 ```
 
+```yaml
+Look if there are well-known limitations and pitfalls related to the
+technologies, programming languages, and components used to implement
+reactive control mechanisms, especially regarding lockout features.
+```
+
 * **Testing**
 ```yaml
 When testing, it's essential to keep in mind not just if the control works
 but also if there are other obscure ways to make it works under abuse.
 ```
+
+```yaml
+Even though automation is handy to map the attack surface, giving the
+tester an overview about where/how to fuzz, fields prone to manipulation,
+user-controlled inputs, and so on, it is still an additional resource. It
+is crucial to remember that the nature of logic flaws requires a granular
+and meticulous manual analysis to spot anomalies and simulate unexpected
+outcomes.
+```
+
 
 ### Checklist
 _[Section in progress]_
