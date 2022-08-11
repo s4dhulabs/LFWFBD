@@ -396,7 +396,22 @@ Now note the comment on line 44. It says:
 
 ```// Always unlock here, there might be some race conditions or leftovers when switching threshold.``` 
 
-And this possibility of a [race condition](https://en.wikipedia.org/wiki/Race_condition) at this point of the code seems to be the root cause of the timeout-related exceptions. If you look at the code, considering the old one (-), you'll notice that in an exception condition, the incrementation of `count` on line 57 will never happen, so the threat will be able to continue whatever was the goal. In addition, because the disruption was not being raised in the vulnerable version, you'll also see some tracebacks and technical information leakage client-side. 
+And this possibility of a [race condition](https://en.wikipedia.org/wiki/Race_condition) at this point of the code seems to be the root cause of the timeout-related exceptions. If you look at the code, considering the old one (-), you'll notice that in an exception condition, the incrementation of `count` on line 57 will never happen, so the threat will be able to continue whatever was the goal. In addition, because the disruption was not being raised in the vulnerable version, you'll also see stack traces and tracebacks leaked client-side, something like this:
+    
+```html
+
+Debug info:
+Error code: locktimeout
+
+Stack trace:
+
+   * line 503 of /lib/setuplib.php: moodle_exception thrown
+   * line 907 of /lib/setuplib.php: call to print_error()
+   * line 734 of /lib/setup.php: call to initialise_fullme()
+   * line 36 of /config.php: call to require_once()
+   * line 30 of /index.php: call to require_once()
+ 
+```
 
 With this in mind, we could infer that the bypass consisted basically of fuzzing the authentication mechanism, causing some delay to interfere with the lock logic. The last note is that regardless of the comment about the necessity of `release the lock on a failure.`, when the execution hits line 77 where the locktimeout is handled (failure), there is no `$lock->release();`.  
     
