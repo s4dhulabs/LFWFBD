@@ -15,7 +15,6 @@ Instead, this is about ideas I've been polishing for a long time during my journ
 #### What about this name?
 This synthesizes the own nature and motivation for this project. It's a kind reminder that logic flaws and insecure design issues could affect your business, clients, and the whole user experience. Still, in theory, everything will be just fine, according to the plan, no [detectable] vulnerabilities to be worried about. 
 
-<br>
 
 ## Project Objectives
 
