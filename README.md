@@ -17,6 +17,14 @@ This synthesizes the own nature and motivation for this project. It's a kind rem
 
 <br>
 
+## Project Objectives
+
+* Help software engineers and developers build secure controls, avoiding logic pitfalls. 
+* Give penetration testers, QAs, and bug hunters a detailed perspective about the possibilities of logic flaws and insecure designs. 
+* Provide case studies to reference research, secure coding practices, and security assessment. 
+* Provide a resource to enrich awareness initiatives focused on developers or incident response teams. 
+
+<br>
 Available case studies in this first release:
 
 | **ID** | **Case study**  |  **Cases**  | **Status**  |
