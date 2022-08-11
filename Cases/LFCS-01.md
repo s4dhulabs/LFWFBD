@@ -188,7 +188,6 @@ graph LR
 In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
 
 ## Complexities and Misconceptions<a name="item2"></a>
-_[Section in progress]_
 
 Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. 
 
