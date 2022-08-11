@@ -22,6 +22,7 @@ flowchart LR
 * [Complexities and Misconceptions](#item2) 
     * [Case analysis](#cveexamples)   
 * [Mitigation Insights](#item3) 
+    * [Highlights](#highlights)
 * [Conclusion](#item4) 
 * [External References](#ref1)
 * [Referencing this study](#studyref1)
@@ -486,7 +487,32 @@ graph TB
 
 <br>
 
-_Continue..._
+### Highlights<a name="highlights"></a> 
+
+Below are some highlights of this study related to designing, implementing, and testing components in this context: 
+<br>
+<br>
+
+* **Designing**
+```yaml
+When designing the workflow in this context, extrapolate the possibilities
+to map possible deviations and undocumented routes.
+
+In this context, threat modeling is crucial to be in place.
+```
+
+* **Implementation** 
+```yaml
+When implementing this sort of control, you must remember how it is
+supposed to help users AND if a threat actor could abuse this legitimate
+feature or some component. 
+```
+
+* **Testing**
+```yaml
+When testing, it's essential to keep in mind not just if the control works
+but also if there are other obscure ways to make it works under abuse.
+```
 
 ### Checklist
 _[Section in progress]_
