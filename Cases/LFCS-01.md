@@ -23,7 +23,7 @@ flowchart LR
     * [Case analysis](#cveexamples)   
 * [Mitigation Insights](#item3) 
     * [Highlights](#highlights)
-* [Conclusion](#item4) 
+* [Study Conclusion](#item4) 
 * [External References](#ref1)
 * [Referencing this study](#studyref1)
 <br/>
@@ -396,7 +396,7 @@ From this brief analysis, new questions arise, and the most important one at thi
 Now note the comment on line 44. It says:
 
 ```// Always unlock here, there might be some race conditions or leftovers when switching threshold.``` 
-
+<a name="exceptionexample1"></a>
 And this possibility of a [race condition](https://en.wikipedia.org/wiki/Race_condition) at this point of the code seems to be the root cause of the timeout-related exceptions. If you look at the code, considering the old one (-), you'll notice that in an exception condition, the incrementation of `count` on line 57 will never happen, so the threat will be able to continue whatever was the goal. In addition, because the disruption was not being raised in the vulnerable version, you'll also see stack traces and tracebacks leaked client-side, something like this:
     
 ```html
@@ -491,47 +491,59 @@ graph TB
 
 Below are some highlights of this study related to designing, implementing, and testing components in this context: 
 <br>
-<br>
 
-* **Designing**
-```yaml
-When designing the workflow in this context, extrapolate the possibilities
-to map possible deviations and undocumented routes.
+<details>
+<summary style="font-size:14px"><i>Designing</i></summary>
+<p><br>
+    
+```text
+• When designing the workflow in this context, extrapolate the possibilities
+  to map possible deviations and undocumented routes.
 
-In this context, threat modeling is crucial to be in place.
+  In this context, threat modeling is crucial to be in place.
 ```
+</p></details>
 
-* **Implementation** 
-```yaml
-When implementing this sort of control, you must remember how it is
-supposed to help users AND if a threat actor could abuse this legitimate
-feature or some component. 
+<details>
+<summary style="font-size:14px"><i>Implementing</i></summary>
+<p><br>
+
+```text
+• When implementing this sort of control, you must remember how it is
+  supposed to help users AND if a threat actor could abuse this legitimate
+  feature or some component. 
+
+• Look if there are well-known limitations and pitfalls related to the
+  technologies, programming languages, and components used to implement
+  reactive control mechanisms, especially regarding lockout features.
 ```
+</p></details>
 
-```yaml
-Look if there are well-known limitations and pitfalls related to the
-technologies, programming languages, and components used to implement
-reactive control mechanisms, especially regarding lockout features.
+<details>
+<summary style="font-size:14px"><i>Testing</i></summary>
+<p><br>
+    
+```text
+• When testing, it's essential to keep in mind not just if the control works
+  but also if there are other obscure ways to make it works under abuse.
+
+• Even though automation is handy to map the attack surface, giving the
+  tester an overview about what/where/how to fuzz, fields prone to manipulation,
+  user-controlled inputs, and so on, it is still an additional resource. It
+  is crucial to remember that the nature of logic flaws requires a granular
+  and meticulous manual analysis to spot anomalies and simulate unexpected
+  outcomes.
+  
+• Always be aware of timeout-related exceptions when testing a control that
+  relies upon lockouts, delays, and disconnection. Suppose the attacker
+  can interfere in the logic and force the application to throw up an
+  unhandled exception. In that case, it can lead to information leakage
+  and logic rupture, as demonstrated in View analysis #3.
+
 ```
-
-* **Testing**
-```yaml
-When testing, it's essential to keep in mind not just if the control works
-but also if there are other obscure ways to make it works under abuse.
-```
-
-```yaml
-Even though automation is handy to map the attack surface, giving the
-tester an overview about where/how to fuzz, fields prone to manipulation,
-user-controlled inputs, and so on, it is still an additional resource. It
-is crucial to remember that the nature of logic flaws requires a granular
-and meticulous manual analysis to spot anomalies and simulate unexpected
-outcomes.
-```
-
+</p></details>
 
 ### Checklist
-_[Section in progress]_
 Review the reference items on the scenario matrix table in the begin, that includes validations as:
 
 
@@ -581,7 +593,7 @@ Review the reference items on the scenario matrix table in the begin, that inclu
 
 _Continue..._
 
-## Conclusion:<a name="item4"></a> 
+## Study Conclusion:<a name="item4"></a> 
 
 Besides the fact that this approach is not effective, it also create new problems such as:
 
