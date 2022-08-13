@@ -18,10 +18,12 @@ This synthesizes the own nature and motivation for this project. It's a kind rem
 
 ## Project Objectives
 
-* Help software engineers and developers build secure controls, avoiding logic pitfalls. 
+* Help software engineers and developers build secure controls avoiding logic pitfalls. 
 * Give penetration testers, QAs, and bug hunters a detailed perspective about the possibilities of logic flaws and insecure designs. 
 * Provide case studies to reference research, secure coding practices, and security assessment. 
 * Provide a resource to enrich awareness initiatives focused on developers or incident response teams. 
+* Provide a cross-perspective of the issue considering the developer and attacker's points of view. 
+
 
 <br>
 Available case studies in this first release:
