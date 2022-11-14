@@ -170,6 +170,7 @@ This scenario leads to all sort of situations from a user perspective starting b
 In this scenario just the legitimate user has been punished while the attacker just received another insight about how to disrupt that particular business workflow by abusing of the insecure design. 
 
 And other important point about this really ordinary problem can be seem bellow:
+
 ```mermaid
 graph LR
     %%require:tcejorpuhd4s1.1
@@ -182,10 +183,14 @@ graph LR
     E --> id1
     F --> id1
     A -.-> id1 
-    C -.-> |Users A,B,C exists|A
-   
+    C -.-> |Users A,B,C exist|A
+    _
 
 ```
+
+
+<br/>
+
 In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
 
 ## Complexities and Misconceptions<a name="item2"></a>
