@@ -164,7 +164,7 @@ graph LR
 This is a negative approach that starts from a legitimate premisse: If someone is trying to guess authentic users credentials many times he will be blocked. 
 
 ### User perspective<a name="subitem3"></a>
-This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, so at least thecnicaly it put the companies business at suspect, because seems like they don't know what they doing. They dont have control about users activities. 
+This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, at least technically, it put the company business under suspicion, because seems like they don't know what they doing. They dont have control about users activities. 
 
 ### Outcome<a name="subitem4"></a>
 In this scenario just the legitimate user has been punished while the attacker just received another insight about how to disrupt that particular business workflow by abusing of the insecure design. 
