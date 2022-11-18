@@ -161,7 +161,7 @@ graph LR
 ```
 
 ### Premisse<a name="subitem2"></a>
-This is a negative approach that starts from a legitimate premisse: If someone is trying to guess authentic users credentials many times he will be blocked. 
+This negative approach starts from a legitimate premise: If someone tries to guess an authentic user's credentials many times, he will be blocked.
 
 ### User perspective<a name="subitem3"></a>
 This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, at least technically, it put the company business under suspicion, because seems like they don't know what they doing. They dont have control about users activities. 
