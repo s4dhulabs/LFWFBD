@@ -164,12 +164,12 @@ graph LR
 This negative approach starts from a legitimate premise: If someone tries to guess an authentic user's credentials many times, he will be blocked.
 
 ### User perspective<a name="subitem3"></a>
-This scenario leads to all sort of situations from a user perspective starting by the fact that makes no sense at all to have your account blocked if you didn't do anything wrong, at least technically, it put the company business under suspicion, because seems like they don't know what they doing. They dont have control about users activities. 
+This scenario leads to all sorts of situations from a user perspective, starting with the fact that it makes no sense to have your account blocked if you didn't do anything wrong. At least technically, it put the company business under suspicion because it seems like they don't know what they are doing. They don't have control over users' activities.
 
 ### Outcome<a name="subitem4"></a>
-In this scenario just the legitimate user has been punished while the attacker just received another insight about how to disrupt that particular business workflow by abusing of the insecure design. 
+In this scenario, just the legitimate user has been punished. At the same time, the attacker just received another insight into how to disrupt that particular business workflow by abusing the insecure design. 
 
-And other important point about this really ordinary problem can be seem bellow:
+And another important point about this ordinary problem can be seen below:
 
 ```mermaid
 graph LR
@@ -191,11 +191,11 @@ graph LR
 
 <br/>
 
-In addition the attacker also know which users are valid or not. So it also leads to valid user enumeration, which is specially handy when the attacker is not necessarily trying to guess password, but also the usernames from a blackbox perspective.
+In addition, the attacker also knows which users are valid or not. So it also leads to valid user enumeration, which is especially handy when the attacker is not necessarily trying to guess the password but also the usernames from a black box perspective.
 
 ## Complexities and Misconceptions<a name="item2"></a>
 
-Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the misunderstanding about how to handle this situation and the solution. 
+Although it is relatively easy to find real word vulnerabilities in this studied case, the main problem remains the need to clarify how to handle this situation and the solution. 
 
 ### Case analysis<a name="cveexamples"></a> 
 
@@ -227,7 +227,7 @@ As we can see, the case studied here is so problematic and with such a wild spre
     2. [Statement 1] allows remote attackers to guess usernames or passwords via a brute force attack
 
 
-If we implement the first statement we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
+If we implement the first statement, we will inevitably put legitimate users at risk of being punished (locked out/disconnected) when threat actors try to brute force their credentials. 
 
 Also important to consider that once it is logically impossible to lock out an account that doesn't exist, the attacker will also be able to guess the valid ones. Guess what? Those blocked! 
 
@@ -261,10 +261,10 @@ break-in limit threshold for failed login attempts, which makes it easier
 for attackers to conduct brute force password guessing.
 ```
 
-And splitting it again into two statements (1. what the technology is missing, and 2. what this can allow threat actors to with), we'll ending up in the same arrangement we saw previously: 
+And splitting it again into two statements (1. what the technology is missing, and 2. what this can allow threat actors to with), we'll end up in the same arrangement we saw previously: 
 
 
-    1. [The affected technology] do not properly disable access to user accounts that exceed the
+    1. [The affected technology] does not properly disable access to user accounts that exceed the
        break-in limit threshold for failed login attempts
 
     2. [Statement 1] makes it easier for attackers to conduct brute force password guessing.
