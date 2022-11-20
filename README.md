@@ -23,6 +23,7 @@ This synthesizes the own nature and motivation for this project. It's a kind rem
 * Provide case studies to reference research, secure coding practices, and security assessment. 
 * Provide a resource to enrich awareness initiatives focused on developers or incident response teams. 
 * Provide a cross-perspective of the issue considering the developer and attacker's points of view. 
+* Offer case study scenarios to enrich Threat Modeling process.
 
 
 <br>
